@@ -7,7 +7,7 @@ public class Day1 {
     ArrayList<Integer> inputs = new ArrayList<>();
 
     public Day1() {
-        File file = new File("Day 1/Part 1/input");
+        File file = new File("res/day1_input");
         Scanner scanner = null;
         try {
             scanner = new Scanner(file);
@@ -30,6 +30,21 @@ public class Day1 {
             }
         }
         System.out.println(counter);
+    }
+
+    void part2() {
+        int counter = 0;
+        int sum1 = inputs.get(0) + inputs.get(1) + inputs.get(2);
+
+        for(int i = 1; i <= inputs.size() - 3; i++) {
+            int sum2 = inputs.get(i) + inputs.get(i + 1) + inputs.get(i + 2);
+            if(sum1 < sum2) {
+                counter++;
+            }
+            sum1 = sum2;
+        }
+        System.out.println(counter);
+
     }
 
 }
